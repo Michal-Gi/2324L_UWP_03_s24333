@@ -33,7 +33,12 @@ public class DeathDialogue : MonoBehaviour
     {
         if(GameObject.Find("Player").GetComponent<PlayerHP>().currentHp > 0)
         {
-        if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)) {
+                Debug.Log("DeathDialogue started");
+                image.enabled = true;
+                index = 0;
+                StartCoroutine(TypeText());
+            }
             StartDialogue();
         if (image.enabled) { 
             if (Input.GetMouseButtonDown(0)) {
@@ -46,14 +51,6 @@ public class DeathDialogue : MonoBehaviour
             }
 
         }}
-    }
-
-    public void StartDialogue() {
-        Debug.Log("DeathDialogue started");
-        image.enabled = true;
-        index = 0;
-        StartCoroutine(TypeText());
-        
     }
 
     IEnumerator TypeText() {

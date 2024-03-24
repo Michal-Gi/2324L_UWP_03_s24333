@@ -63,7 +63,7 @@ public class PlayerHeathSystem : MonoBehaviour
         if(col.gameObject.layer == LayerMask.NameToLayer("Item")){
             if(col.gameObject.tag == "Eye")
                 _EyeCounter++;
-            if(col.gameObject.tag == "Wing")
+            else if(col.gameObject.tag == "Wing")
                 _WingCounter++;
         GameObject.Destroy(col.gameObject);
         }

@@ -32,23 +32,19 @@ public class PlatformMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-    }
-
-    public void Move()
-    {
-        if (_isMoving) {
-        if (  _transform.position.x <= _rangeXRIGHT || _transform.position.y >= _rangeYUP)
+        if (_isMoving)
         {
-            _body.velocity = _vec * -1;
-        }
-        if (_transform.position.x >= _rangeXLEFT || _transform.position.y <= _rangeYDOWN) { 
-            _body.velocity = _vec;
-        }
+            if (_transform.position.x <= _rangeXRIGHT || _transform.position.y >= _rangeYUP)
+            {
+                _body.velocity = _vec * -1;
+            }
+            else if (_transform.position.x >= _rangeXLEFT || _transform.position.y <= _rangeYDOWN)
+            {
+                _body.velocity = _vec;
+            }
         }
         else
-        return;
-
+            return;
     }
 
 }

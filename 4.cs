@@ -87,16 +87,12 @@ public class EnemyWalker : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        _isGrounded = true;
-    }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         _isGrounded = false;
     }
-
+    private void OnCollisionStay2D(Collision2D collision)
+        _isGrounded = true;
 
     private void Walk()
     {
